@@ -45,4 +45,4 @@ const cacheUtility = {
   }
 }
 
-export default cacheUtility;
+export default cacheUtility
