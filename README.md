@@ -6,7 +6,7 @@ Import library:
 ```javascript
 import cache from '@sswahn/cache'
 ```  
-Now, access to the get, post, put, and delete methods.  
+
 ### Get  
 Retrieve a response from cache by name and request.  
 ```javascript
