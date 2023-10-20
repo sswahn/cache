@@ -13,7 +13,7 @@ Retrieve a response from cache by name and request.
 const response = await cache.get('myCache', request)
 ```
 
-### Post    
+### Set    
 Set a response in cache by name, request, and response.  
 ```javascript
 await cache.set('myCache', request, response)
