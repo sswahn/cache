@@ -38,4 +38,4 @@ const keys = await cacheUtility.keys('myCache')
 ```
 
 ## Licence
-Server is [MIT Licensed](https://github.com/sswahn/server/blob/main/LICENSE)
+Cache is [MIT Licensed](https://github.com/sswahn/cache/blob/main/LICENSE)
