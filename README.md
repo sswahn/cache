@@ -28,13 +28,13 @@ await cache.delete('myCache', request)
 ### Clear    
 Clear all entries from a specific cache by name.  
 ```javascript
-await cacheUtility.clear('myCache')
+await cache.clear('myCache')
 ```
 
 ### Keys    
 Retrieve all keys from a specific cache by name.   
 ```javascript
-const keys = await cacheUtility.keys('myCache')
+const keys = await cache.keys('myCache')
 ```
 
 ## Licence
