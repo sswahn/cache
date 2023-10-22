@@ -37,5 +37,5 @@ Retrieve all keys from a specific cache by name.
 const keys = await cache.keys('myCache')
 ```
 
-## Licence
+## License
 Cache is [MIT Licensed](https://github.com/sswahn/cache/blob/main/LICENSE)
