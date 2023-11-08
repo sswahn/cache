@@ -9,12 +9,19 @@ const cache = {
     try {
       const cache = await caches.open(name)
       const response = await cache.match(request)
+      const cacheControlHeader = response.headers.get('Cache-Control')
+      const maxAge = cacheControlHeader.split('max-age=')[1]
+      const cacheExpirationTime = Date.now() + Number(maxAge) * 1000
+      if (cacheExpirationTime < Date.now()) {
+        await cache.delete(request)
+        return null
+      }
       return response.json()
     } catch (error) {
       throw new Error(`Failed to retrieve from cache ${name}.`)
     }
   },
-  async set(name, request, response) {
+  async set(name, request, response, maxAgeSeconds = 180) {
     if (typeof name !== 'string') {
       throw new TypeError('set: first argument must be of type string.')
     }
@@ -26,7 +33,11 @@ const cache = {
     }
     try {
       const cache = await caches.open(name)
-      await cache.put(request, response.clone()) // resonse must be an instance of Response (the raw fetch response).
+      const responseWithCacheControl = new Response(response.body, {
+        'Cache-Control': `max-age=${maxAgeSeconds}`,
+        ...response.headers
+      })
+      await cache.put(request, responseWithCacheControl)
     } catch (error) {
       throw new Error(`Failed to set cache entry for ${name}.`)
     }
