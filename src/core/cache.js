@@ -1,5 +1,11 @@
-const cacheUtility = {
+const cache = {
   async get(name, request) {
+    if (typeof name !== 'string') {
+      throw new TypeError('get: first argument must be of type string.')
+    }
+    if (!(request instanceof Request)) {
+      throw new TypeError('get: second argument must be an instance of Request')
+    }
     try {
       const cache = await caches.open(name)
       const response = await cache.match(request)
@@ -9,6 +15,15 @@ const cacheUtility = {
     }
   },
   async set(name, request, response) {
+    if (typeof name !== 'string') {
+      throw new TypeError('set: first argument must be of type string.')
+    }
+    if (!(request instanceof Request)) {
+      throw new TypeError('set: second argument must be an instance of Request')
+    }
+    if (!response) {
+      throw new TypeError('set: third argument cannot be null or undefined')
+    }
     try {
       const cache = await caches.open(name)
       await cache.put(request, response.clone())
@@ -17,6 +32,12 @@ const cacheUtility = {
     }
   },
   async delete(name, request) {
+    if (typeof name !== 'string') {
+      throw new TypeError('delete: first argument must be of type string.')
+    }
+    if (!(request instanceof Request)) {
+      throw new TypeError('delete: second argument must be an instance of Request')
+    }
     try {
       const cache = await caches.open(name)
       await cache.delete(request)
@@ -25,6 +46,9 @@ const cacheUtility = {
     }
   },
   async clear(name) {
+    if (typeof name !== 'string') {
+      throw new TypeError('clear: argument must be of type string.')
+    }
     try {
       const cache = await caches.open(name)
       const keys = await cache.keys()
@@ -36,6 +60,9 @@ const cacheUtility = {
     }
   },
   async keys(name) {
+    if (typeof name !== 'string') {
+      throw new TypeError('keys: argument must be of type string.')
+    }
     try {
       const cache = await caches.open(name)
       return cache.keys()
@@ -45,4 +72,4 @@ const cacheUtility = {
   }
 }
 
-export default cacheUtility
+export default cache
