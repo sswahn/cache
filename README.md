@@ -6,18 +6,19 @@ A robust caching utility that provides easy-to-use methods for interacting with 
 npm install @sswahn/cache
 ```
 
+## Features
+- **Robust Caching:** A powerful caching utility that leverages the browser's Cache API to provide reliable and efficient caching capabilities.
+- **Easy-to-Use Methods:** Simple and intuitive methods for interacting with the cache, making it easy to integrate caching into your web applications.
+- **Flexible Cache Expiration:** Set custom expiration times for cached entries using the `max-age` parameter, with the ability to specify the time in seconds for fine-grained control.
+- **Retrieve Cached Data:** Retrieve cached responses by providing a cache name and a matching request, ensuring consistent and reliable data retrieval.
+- **Efficient Cache Management:** Easily delete specific cache entries or clear the entire cache for efficient cache management.
+- **Retrieve Cache Keys:** Get a list of all keys stored in a specific cache, making it simple to track and manage cached resources.  
+
 ## Usage  
 Import library.  
 
 ```javascript
 import cache from '@sswahn/cache'
-```  
-
-### Get  
-Retrieve a response from cache by name and request.  
-
-```javascript
-const response = await cache.get('cachName', new Request(url))
 ```
 
 ### Set    
@@ -35,11 +36,18 @@ Set a response in cache with a custom maxAge. The default to 180 seconds or 3 mi
 await cache.set('cachName', request, response, 300)
 ```
 
+### Get  
+Retrieve a response from cache by name and request.  
+
+```javascript
+const response = await cache.get('cachName', request)
+```
+
 ### Delete  
 Delete a specific cache entry by name and request.  
 
 ```javascript
-await cache.delete('cachName', new Request(url))
+await cache.delete('cachName', request)
 ```
 
 ### Clear    
