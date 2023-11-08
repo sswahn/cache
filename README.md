@@ -1,6 +1,11 @@
 # Cache
 A robust caching utility that provides easy-to-use methods for interacting with the browser's Cache API.
 
+## Installation
+```bash
+npm install @sswahn/cache
+```
+
 ## Usage  
 Import library.  
 
