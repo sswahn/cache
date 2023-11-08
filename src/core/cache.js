@@ -4,7 +4,7 @@ const cache = {
       throw new TypeError('get: first argument must be of type string.')
     }
     if (!(request instanceof Request)) {
-      throw new TypeError('get: second argument must be an instance of Request')
+      throw new TypeError('get: second argument must be an instance of Request.')
     }
     try {
       const cache = await caches.open(name)
@@ -19,14 +19,14 @@ const cache = {
       throw new TypeError('set: first argument must be of type string.')
     }
     if (!(request instanceof Request)) {
-      throw new TypeError('set: second argument must be an instance of Request')
+      throw new TypeError('set: second argument must be an instance of Request.')
     }
-    if (!response) {
-      throw new TypeError('set: third argument cannot be null or undefined')
+    if (!(response instanceof Response)) {
+      throw new TypeError('set: third argument must be an instance of Response.')
     }
     try {
       const cache = await caches.open(name)
-      await cache.put(request, response.clone())
+      await cache.put(request, response.clone()) // resonse must be an instance of Response (the raw fetch response).
     } catch (error) {
       throw new Error(`Failed to set cache entry for ${name}.`)
     }
@@ -36,7 +36,7 @@ const cache = {
       throw new TypeError('delete: first argument must be of type string.')
     }
     if (!(request instanceof Request)) {
-      throw new TypeError('delete: second argument must be an instance of Request')
+      throw new TypeError('delete: second argument must be an instance of Request.')
     }
     try {
       const cache = await caches.open(name)
