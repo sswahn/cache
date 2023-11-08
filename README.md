@@ -26,7 +26,6 @@ Set a response in cache by name, request, and response.
 ```javascript
 const request = new Request(url)
 const response = await fetch(request)
-const optionalMaxAgeInSeconds = 300 // default is 180 (3 min)
 
 await cache.set('cachName', request, response)
 ```
