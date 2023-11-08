@@ -31,7 +31,7 @@ const response = await fetch(request)
 await cache.set('cachName', request, response)
 ```
 
-Set a response in cache with a custom maxAge. The default to 180 seconds or 3 minutes.
+Set a cache with a custom `max-age`. The default is 180 seconds or 3 minutes.
 ```javascript
 await cache.set('cachName', request, response, 300)
 ```
