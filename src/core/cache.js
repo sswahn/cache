@@ -37,7 +37,8 @@ const cache = {
         headers: {
           'Cache-Control': `max-age=${maxAgeSeconds}`,
           ...response.headers
-      }})
+        }
+      })
       await cache.put(request, responseWithCacheControl)
     } catch (error) {
       throw new Error(`Failed to set cache entry for ${name}.`)
