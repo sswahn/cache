@@ -47,6 +47,15 @@ Retrieve all keys from a specific cache by name.
 ```javascript
 const keys = await cache.keys('cachName')
 ```
+## Example  
+```javascript
+const url = 'https://example.com/api/data'
+const request = new Request(url)
+const response = await fetch(request)
+
+await cache.set('myCache', request, response)
+
+```
 
 ## License
 Cache is [MIT Licensed](https://github.com/sswahn/cache/blob/main/LICENSE)
