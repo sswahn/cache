@@ -1,4 +1,4 @@
-# Cache · [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/sswahn/storage/blob/main/LICENSE) ![npm version](https://img.shields.io/npm/v/@sswahn/storage)
+# Cache · [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/sswahn/cache/blob/main/LICENSE) ![npm version](https://img.shields.io/npm/v/@sswahn/cache)
 A robust caching utility that provides easy-to-use methods for interacting with the browser's Cache API.
 
 ## Installation
