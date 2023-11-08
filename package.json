@@ -6,7 +6,8 @@
   "type": "module",
   "main": "src/index.js",
   "keywords": [
-    "cache"
+    "cache",
+    "browser"
   ],
   "repository": {
     "type": "git",
