@@ -1,10 +1,5 @@
 # Cache · [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/sswahn/cache/blob/main/LICENSE) ![npm version](https://img.shields.io/npm/v/@sswahn/cache)
-A robust caching utility that provides easy-to-use methods for interacting with the browser's Cache API.
-
-## Installation
-```bash
-npm install @sswahn/cache
-```
+A robust caching utility that provides easy-to-use methods for interacting with the browser's Cache API.  
 
 ## Features
 - **Robust Caching:** A powerful caching utility that leverages the browser's Cache API to provide reliable and efficient caching capabilities.
@@ -13,6 +8,11 @@ npm install @sswahn/cache
 - **Retrieve Cached Data:** Retrieve cached responses by providing a cache name and a matching request, ensuring consistent and reliable data retrieval.
 - **Efficient Cache Management:** Easily delete specific cache entries or clear the entire cache for efficient cache management.
 - **Retrieve Cache Keys:** Get a list of all keys stored in a specific cache, making it simple to track and manage cached resources.  
+
+## Installation
+```bash
+npm install @sswahn/cache
+```
 
 ## Usage  
 Import library.  
