@@ -12,21 +12,21 @@ import cache from '@sswahn/cache'
 Retrieve a response from cache by name and request.  
 
 ```javascript
-const response = await cache.get('myCache', request)
+const response = await cache.get('myCache', new Request(url))
 ```
 
 ### Set    
 Set a response in cache by name, request, and response.  
 
 ```javascript
-await cache.set('myCache', request, response)
+await cache.set('myCache', new Request(url), response)
 ```
 
 ### Delete  
 Delete a specific cache entry by name and request.  
 
 ```javascript
-await cache.delete('myCache', request)
+await cache.delete('myCache', new Request(url))
 ```
 
 ### Clear    
