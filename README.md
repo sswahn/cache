@@ -24,7 +24,7 @@ const response = await cache.get('cachName', new Request(url))
 Set a response in cache by name, request, and response.  
 
 ```javascript
-await cache.set('cachName', new Request(url), response)
+await cache.set('cachName', request, response)
 ```
 
 ### Delete  
