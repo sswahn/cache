@@ -40,14 +40,14 @@ await cache.set('cachName', request, response, 300)
 Retrieve a response from cache by name and request.  
 
 ```javascript
-const response = await cache.get('cachName', request)
+const response = await cache.get('cachName', new Request(url))
 ```
 
 ### Delete  
 Delete a specific cache entry by name and request.  
 
 ```javascript
-await cache.delete('cachName', request)
+await cache.delete('cachName', new Request(url))
 ```
 
 ### Clear    
