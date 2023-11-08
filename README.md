@@ -12,35 +12,35 @@ import cache from '@sswahn/cache'
 Retrieve a response from cache by name and request.  
 
 ```javascript
-const response = await cache.get('myCache', new Request(url))
+const response = await cache.get('cachName', new Request(url))
 ```
 
 ### Set    
 Set a response in cache by name, request, and response.  
 
 ```javascript
-await cache.set('myCache', new Request(url), response)
+await cache.set('cachName', new Request(url), response)
 ```
 
 ### Delete  
 Delete a specific cache entry by name and request.  
 
 ```javascript
-await cache.delete('myCache', new Request(url))
+await cache.delete('cachName', new Request(url))
 ```
 
 ### Clear    
 Clear all entries from a specific cache by name.  
 
 ```javascript
-await cache.clear('myCache')
+await cache.clear('cachName')
 ```
 
 ### Keys    
 Retrieve all keys from a specific cache by name.  
 
 ```javascript
-const keys = await cache.keys('myCache')
+const keys = await cache.keys('cachName')
 ```
 
 ## License
