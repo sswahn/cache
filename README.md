@@ -64,6 +64,10 @@ Retrieve all keys from a specific cache by name.
 const keys = await cache.keys('cachName')
 ```
 
+## Related
+- [@sswahn/storage](https://www.npmjs.com/package/@sswahn/storage): A robust and easy-to-use utility for interacting with Web Storage API.
+- [@sswahn/database](https://www.npmjs.com/package/@sswahn/database): Easily interact with the IndexedDB API with a simplified, promise-based approach.
+- [@sswahn/cookie](https://www.npmjs.com/package/@sswahn/cookie): A lightweight, easy-to-use utility for efficiently managing cookies in a web browser.   
 
 ## License
 Cache is [MIT Licensed](https://github.com/sswahn/cache/blob/main/LICENSE)
